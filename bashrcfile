@@ -110,10 +110,10 @@ echo "Good Day Jeebu"
 
 
 ##########IITB Proxy variable ##################
- export ftp_proxy=ftp://jeebujacob:jeebu\&jacob@netmon.iitb.ac.in:80/
- export http_proxy=http://jeebujacob:jeebu\&jacob@netmon.iitb.ac.in:80/
- export https_proxy=https://jeebujacob:jeebu\&jacob@netmon.iitb.ac.in:80/
- export	socks_proxy=socks://jeebujacob:jeebu\&jacob@netmon.iitb.ac.in:80/
+ export ftp_proxy=ftp://username:password@netmon.iitb.ac.in:80/
+ export http_proxy=http://username:password@netmon.iitb.ac.in:80/
+ export https_proxy=https://username:password@netmon.iitb.ac.in:80/
+ export	socks_proxy=socks://username:password@netmon.iitb.ac.in:80/
  export no_proxy=10.0.0.0/8,127.0.0.0,ftp.iitb.ac.in,*.iitb.ac.in,10.13.42.6
 
  ##########Bluespec Variables-Added on 14th August 2013######
