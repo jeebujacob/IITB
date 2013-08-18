@@ -1,0 +1,100 @@
+Topic: Tuitorial on basic Linux and OS concepts
+Speaker: Mr. Manu Velayudhan, PC lab, Dpt. of EE, IIT Bombay
+Venue: WEL, Dpt. of EE
+Time: 9 PM, 17/ 08/ 2013
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Outline
+
+Introduction to Linux
+2. Linux Kernel
+3. How Linux works
+4. Basic terminal functionalities, basic shortcuts, working with Linux,
+small examples
+5. Shell and power of shell
+6. Linux process and thread management
+7. Linux Kernel concurrency mechanisms – Semaphore, Mutex, Threads
+8. Kernel Memory Allocation and Management
+9. Linux scheduling – Time scheduling , Real Time scheduling
+10. Linux I/O
+11. Linux virtual file system
+12. Linux Networking
+13. Introduction to Embedded Linux
+
+
+Legend: 
+
+* Point related to the discussion
+# Comments unrelated to the discussion
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+About kernel and OS
+
+What does the OS do
+1. Task scheduling
+2. Memory management
+3. Drivers
+Note: Kernel is on top of the OS. In Windows kernel and OS appear to be a same entity.
+Eg: When we click mouse, the position of mouse should be interpreted by OS and kernel will just do the process needed when we click some icon, and it dont care about the position of the cursor.
+* Kernel + all other applications needed (by the user) = OS
+* All drivers may not be present in the kernel
+Unix and Linux:
+* Unix is also an OS. But made only for huge server and other big applications. Difficult to maintian. No GUI
+
+# If you want to write drivers, you need to pay license to Windows and then you may modify it for your application
+# VLC is free, since it is maintained by a community and not by a single company
+# .exe in Windows and .elf (executable and linkable format) in Lunux
+
+Why Windows more affected by virus:
+* Most of the Windows distributions have many things in common due to the monolithic nature. So the virus programs written for older versions 98, 2000 etc will run for xp, 7, 8 etc.
+* But each Linux distribution is different
+
+File systems:
+* Linux: The indexing of the file will be done only after complete copying of the file
+* FAT file systems has a maximum size constraint of 4 GB, which is solved is NTFS filesystem
+# In the new generation hard disk also there is cache memory (32 Mb or so now a days !)
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Partitions
+
+
+* Why we have drives starting from C in Windows and not  A or B?
+Earlier days, people reserved A and B for floppy drives, and we still follow the convention
+* First hard disk will be '/sda' (which can have the partitions inside it as 'sda1', 'sda2', 'sda3' etc.) and second hard disk as '/sdb' and so on
+* Partitions we currently use are 'MBR' where we can have 4 disk partitions allowed
+* In Solaris OS (by Sun microsystems), we dont have byte addressability but access sector wise (eg: sector having 512 or 256 bytes at a time). The sector is accessed by the 'starting address' and 'ending address'
+* You can fool somebody by manipulating these addresses and make the customer believe that the disk or pendrive is of higher capacity
+* Inside an extented partion you can create as many partitions you want
+* Windows can be installed only in primary partitions
+* We can have about 25O OS in a hard disk if you want (somebody already did) !
+# Bootloader is having minimum number of drivers available in it
+* In Linux the time taken to delete the file will be same for a 10 kb file and a 10 GB file since we don't delete the file but only the indexing of the file. It need not be the case always, but it will depend on the file system.
+# Windows assumes there is no other OS in the system
+* Standard partitions: /boot, /bin, /etc, /home, /usr, /lib, /tmp, /var, /log.
+/sda1: /boot
+/sda2: /
+/sda3: /home
+Advantage of doing this: Even if we lose '/' partition we wont lose all the data
+# 'ls' in Linux is alternative of 'dir' in Windows
+* Kernel is stored in '/boot' partition so that when we do boot process it will directly access kernel
+* '/etc' is the 'settings' folder. All teh settings related to almost all things is stored here
+* Similar to registry in windows (which is stored as a single binary file) and we need special software to edit the registry. Linux doesn't have that and we can access each file directly
+* '/usr' : Some default thigs that come with the OS
+* Eg: inside the 'share' folder in '/usr' we have the default wallpapers that come with the OS
+* '/lib': '/lib64' might also be present in 64 bit OS
+# Difference betweel 64 and 32 bit OS: We will have 64 bit instructions in former and 32 bit in latter. Basically the resiger size will be either 32 or 64
+* '/log': Stores the history of all software installations and everthing we have done to the OS
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Shell and power of shell
+
+
+* Shell scripts is the Linux counterpart of batch file in Windows
+* Shell programming: Combining the commands we type in the terminal and make a file so that when we run the script terminal will execute all those commands
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
